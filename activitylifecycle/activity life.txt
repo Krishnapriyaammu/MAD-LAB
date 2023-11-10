@@ -1,0 +1,60 @@
+package com.example.activitylife;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        showToast("oncreate called");
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        setContentView(R.layout.activity_main);
+        showToast("onStart called");
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setContentView(R.layout.activity_main);
+        showToast("onRessume called");
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        setContentView(R.layout.activity_main);
+        showToast("onPause called");
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        setContentView(R.layout.activity_main);
+        showToast("onStop called");
+    }
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        setContentView(R.layout.activity_main);
+        showToast("onRestart called");
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        setContentView(R.layout.activity_main);
+        showToast("onDestroy called");
+    }
+
+
+    private void showToast(String message) {
+        Toast.makeText(this, message,Toast.LENGTH_SHORT).show();
+    }
+
+
+}
+
