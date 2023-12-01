@@ -1,0 +1,42 @@
+package com.example.login;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        final EditText editText = findViewById(R.id.editText);
+        final CheckBox checkBox = findViewById(R.id.checkBox);
+        Button button = findViewById(R.id.button);
+
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String userinput=editText.getText().toString().trim();
+                if(userinput.isEmpty()) {
+                    editText.setError("Field cannot be empty");
+                    return;
+
+            }
+                if(!checkBox.isChecked()) {
+                    Toast.makeText(MainActivity.this, "Please agree to terms and conditions", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                Toast.makeText(MainActivity.this, "Validation is successful", Toast.LENGTH_SHORT).show();
+        }
+
+    });
+    }
+}
